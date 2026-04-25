@@ -1,21 +1,17 @@
-import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
-import { Workspace } from "@/components/Workspace";
-import { Features } from "@/components/Features";
-import { Pricing } from "@/components/Pricing";
-import { Footer } from "@/components/Footer";
+import { useEffect } from "react";
 
 const Index = () => {
+  useEffect(() => {
+    window.location.replace("/coffee/");
+  }, []);
+
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-1">
-        <Hero />
-        <Workspace />
-        <Features />
-        <Pricing />
-      </main>
-      <Footer />
+    <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
+      <div className="text-center space-y-3">
+        <p className="text-2xl font-bold">☕ The Coffee Hub</p>
+        <p className="text-muted-foreground">Loading the menu…</p>
+        <a href="/coffee/" className="underline text-primary">Tap here if not redirected</a>
+      </div>
     </div>
   );
 };
